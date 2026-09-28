@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+.auth/
+
+# Environment files (keep .env.example as template)
+env/.env.*
+!env/.env.example
+
+# Claude Code (local, per-machine)
+.claude/settings.local.json
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store

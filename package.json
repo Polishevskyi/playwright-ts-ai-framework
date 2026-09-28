@@ -1,0 +1,66 @@
+{
+    "name": "playwright-ts-ai-framework",
+    "version": "0.1.0",
+    "private": true,
+    "description": "Playwright + TypeScript test automation framework (UI + API) with an AI-assisted workflow for Claude Code",
+    "scripts": {
+        "test": "playwright test --grep-invert @destructive",
+        "test:chromium": "playwright test --project=chromium --grep-invert @destructive",
+        "test:api": "playwright test --project=api",
+        "test:smoke": "playwright test --grep @smoke",
+        "test:regression": "playwright test --grep @regression",
+        "test:e2e": "playwright test --grep @e2e --project=chromium",
+        "test:headed": "playwright test --project=chromium --headed --grep-invert @destructive",
+        "test:ui": "playwright test --ui",
+        "test:debug": "playwright test --project=chromium --debug",
+        "report": "playwright show-report",
+        "typecheck": "tsc --noEmit",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "prepare": "husky"
+    },
+    "keywords": [
+        "playwright",
+        "typescript",
+        "test-automation",
+        "e2e",
+        "api-testing",
+        "claude-code",
+        "ai"
+    ],
+    "author": "Serhii Polishevskyi",
+    "license": "MIT",
+    "engines": {
+        "node": ">=20"
+    },
+    "lint-staged": {
+        "*.ts": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "*.{json,md}": [
+            "prettier --write"
+        ]
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@faker-js/faker": "^10.6.0",
+        "@playwright/test": "^1.63.0",
+        "@types/node": "^26.6.3",
+        "eslint": "^10.11.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-playwright": "^2.12.0",
+        "husky": "^9.1.7",
+        "jiti": "^2.7.0",
+        "lint-staged": "^17.6.0",
+        "prettier": "^3.9.9",
+        "typescript": "^6.0.3",
+        "typescript-eslint": "^8.70.1"
+    },
+    "dependencies": {
+        "dotenv": "^18.0.4",
+        "zod": "^4.6.5"
+    }
+}
